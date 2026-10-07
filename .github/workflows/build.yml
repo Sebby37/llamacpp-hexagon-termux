@@ -71,7 +71,7 @@ jobs:
             -v "$PWD:/workspace" -w /workspace --platform linux/amd64 \
             "$IMAGE" bash -c '
               set -euo pipefail
-              cmake --preset arm64-android-snapdragon-release -B build-snapdragon -DLLAMA_SUBPROCESS=ON
+              cmake --preset arm64-android-snapdragon-release -B build-snapdragon -DLLAMA_SUBPROCESS=ON 
               cmake --build build-snapdragon -j"$(nproc)"
               cmake --install build-snapdragon --prefix /workspace/pkg/llama-hexagon
             '
